@@ -1,0 +1,60 @@
+.btnNavBarTop{
+  background: rgb(214, 212, 212);
+}
+.btnMain{
+  background: rgb(60 59 59);
+  color: white;
+}
+.navBarTop{
+  background: rgb(60 59 59);
+}
+.ti-menu{
+  color: rgb(214, 212, 212);
+}
+.profilePicture{
+  height: 50px;
+  width: auto;
+}
+.titleNavBarLeft, .navBarTop{
+  height: 65px;
+}
+.sidebar{
+  top: 65px;
+}
+.logo-text{
+  color: white;
+  font-size: 40px;
+}
+.backgroundIcon{
+  color: rgb(60 59 59);
+  font-size: 25px;
+}
+.sidebar-menu li.dropdown .arrow .fa-caret-right{
+  font-size: 20px;
+}
+li ul .dropdown-menu .dropdownMenuRelative{
+  position: relative !important;
+}
+.sidebar-inner{
+  height: calc(100vh - 65px);
+}
+.navArrowShow{
+  height: 70px;
+}
+.menuActive{
+  background: white;
+  font-weight: 400;
+}
+
+.text-hyphens{
+  hyphens: auto;
+  text-align: justify;
+}
+.cardMain{
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+}
+.hCard{
+  height: 150px;
+}
