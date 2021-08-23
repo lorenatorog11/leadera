@@ -363,40 +363,39 @@
         }
       }
 
-      &:hover {
-        width: $offscreen-size;
+      // &:hover {
 
-        .sidebar-inner {
-          .sidebar-logo {
-            border-bottom: 1px solid $border-color;
-            padding: 0 20px;
-          }
+      //   .sidebar-inner {
+      //     .sidebar-logo {
+      //       border-bottom: 1px solid $border-color;
+      //       padding: 0 20px;
+      //     }
 
-          .sidebar-menu {
-            > li {
-              > a {
-                .title {
-                  display: inline-block;
-                }
-              }
-            }
+      //     .sidebar-menu {
+      //       > li {
+      //         > a {
+      //           .title {
+      //             display: inline-block;
+      //           }
+      //         }
+      //       }
 
-            li {
-              &.dropdown {
-                .arrow {
-                  opacity: 1;
-                }
-              }
+      //       li {
+      //         &.dropdown {
+      //           .arrow {
+      //             opacity: 1;
+      //           }
+      //         }
 
-              &.open {
-                > ul.dropdown-menu {
-                  display: block !important;
-                }
-              }
-            }
-          }
-        }
-      }
+      //         &.open {
+      //           > ul.dropdown-menu {
+      //             display: block !important;
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
 
     @include between($breakpoint-md, $breakpoint-xl) {

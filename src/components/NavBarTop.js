@@ -13,7 +13,7 @@ function NavBarTop({Show}) {
       <div className="header-container d-flex flex-wrap">
         <ul className="nav-left col-4 mx-0 ps-4">
           <li>
-            <a className="sidebar-link td-n d-flex justify-content-center align-items-center" href="index.html">
+            <a className="sidebar-link td-n d-flex justify-content-center align-items-center" href="#">
               <h5 className="lh-1 mB-0 logo-text">LEADERA</h5>
             </a>
           </li>

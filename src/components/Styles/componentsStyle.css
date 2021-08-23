@@ -56,5 +56,19 @@ li ul .dropdown-menu .dropdownMenuRelative{
   padding: 20px;
 }
 .hCard{
-  height: 150px;
+  height: 130px;
+}
+.cardMainTwo{
+  padding: 18px;
+}
+.profilePictureAgent{
+  height: 65px;
+}
+.linkStyle{
+  color: black;
+  text-decoration: underline;
+}
+.linkStyle:hover{
+  color: black;
+  text-decoration: underline;
 }

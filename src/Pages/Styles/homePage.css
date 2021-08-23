@@ -45,7 +45,9 @@
   }
 }
 .mainContainer{
-  padding-left: 280px;
   position: relative;
   top: 65px;
+}
+.containerMain{
+  padding-left: 280px;
 }

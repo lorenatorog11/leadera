@@ -2,12 +2,12 @@ import React from 'react'
 
 function CardMainTwo({ labelCardMainOne, labelCardMainTwo, labelCardMainThree, textOne, textTwo, textThree }) {
   return (
-    <div className="peer w-100 cardMain d-flex hCard">
-      <div className="col-6">
+    <div className="peer w-100 cardMain p-0 d-flex hCard">
+      <div className="col-6 cardMainTwo">
         <h6>{labelCardMainOne}</h6>
         <div className="d-flex"><p className="fw-bold fs-2">{textOne}</p></div>
       </div>
-      <div className="col-6 d-flex flex-column">
+      <div className="col-6 d-flex flex-column cardMainTwo border-start border-dark">
         <h6 className="my-0">{labelCardMainTwo}</h6>
         <div className="d-flex"><p className="fw-bold fs-5 my-0">{textTwo}</p></div>
         <h6 className="my-0">{labelCardMainThree}</h6>
