@@ -15,7 +15,7 @@ class Plan extends Component {
   constructor(props){  
     super(props);  
     this.state = {  
-      show : true
+      show : false
       } 
   }
   Show = (e)  =>  { 
@@ -59,7 +59,7 @@ class Plan extends Component {
         <NavBarTop/>
         <div className="app is-collapsed" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
-          <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
+          <main className="container d-fluid pe-4 py-5 mainContainer containerMain" id="containerMain">
             {/* Section: Plan */}
             <div className="row">
               <div className="col-4">
