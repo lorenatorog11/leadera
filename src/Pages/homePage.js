@@ -7,7 +7,7 @@ import NavBarLeft from '../components/NavBarLeft.js';
 import NavBarTop from '../components/NavBarTop.js';
 import BtnMain from '../components/BtnMain.js';
 import CardMain from '../components/CardMain.js';
-import CardMain_ from '../components/CardMain_.js';
+import CardMainThree from '../components/CardMainThree.js';
 import CardMainTwo from '../components/CardMainTwo';
 import CardAgent from '../components/CardAgent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,7 +19,7 @@ class HomePage extends Component {
   constructor(props){  
     super(props);  
     this.state = {  
-      show : false
+      show : true
       } 
   }
   Show = (e)  =>  { 
@@ -67,7 +67,7 @@ class HomePage extends Component {
     const textNine="5k";
     const textTen="1.5k";
     const textEleven="20%";
-
+    
     const image = "https://randomuser.me/api/portraits/men/10.jpg";
 
     const labelCardAgent ="Chats";
@@ -83,7 +83,7 @@ class HomePage extends Component {
         <NavBarTop/>
         <div className="app is-collapsed" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
-          <main className="container d-fluid pe-4 py-5 mainContainer containerMain" id="containerMain">
+          <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
             {/* Section: Plan */}
             <div className="row">
               <div className="col-4">
@@ -91,7 +91,7 @@ class HomePage extends Component {
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
               </div>
               <div className="col-8">
-                <a className="d-flex justify-content-end" href="#"><BtnMain labelBtn={labelBtn} /></a>                
+                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
               </div>              
             </div>
             <div className="row mt-5">
@@ -118,9 +118,9 @@ class HomePage extends Component {
                 </select>
               </div>
               <div className="col-8 d-flex justify-content-end">
-                <a className="d-flex justify-content-end ps-3" href="#">
+                <a className="d-flex justify-content-end ps-3" href="/">
                   <BtnMain labelBtn={labelBtnTwo} /></a> 
-                <a className="d-flex justify-content-end ps-3" href="#">
+                <a className="d-flex justify-content-end ps-3" href="/">
                   <BtnMain labelBtn={labelBtnThree} /></a>                     
               </div>              
             </div>        
@@ -176,7 +176,7 @@ class HomePage extends Component {
                 </div> 
               </div>
               <div className="col-6">
-                <a className="d-flex justify-content-end" href="#"><BtnMain labelBtn={labelBtnFour} /></a>
+                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtnFour} /></a>
                 <div className="col-12 mt-4">
                   <h2>ANUNCIO</h2>
                   <h5 className="mt-2"><FontAwesomeIcon className="" icon={faCircle} />15 días activo</h5>
@@ -184,10 +184,10 @@ class HomePage extends Component {
                 </div>
                 <div className="d-flex flex-wrap">
                   <div className="col-6 p-5">
-                    <CardMain_>
+                    <CardMainThree>
                       <h5>{labelCardMainEight}</h5>
                       <div className="d-flex"><FontAwesomeIcon className="fs-1 me-2" icon={faFacebook} /><FontAwesomeIcon className="fs-1" icon={faInstagram} /></div>
-                    </CardMain_>
+                    </CardMainThree>
                   </div>
                   <div className="col-6 p-5">
                     <CardMain labelCardMain={labelCardMainNine} textOne={textNine} />
@@ -209,7 +209,7 @@ class HomePage extends Component {
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />Agente en proceso de activación</h5>
               </div>
               <div className="col-8">
-                <a className="d-flex justify-content-end" href="#"><BtnMain labelBtn={labelBtnFive} /></a>                
+                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtnFive} /></a>                
               </div>              
             </div>
             <div className="row d-flex flex-wrap">

@@ -6,7 +6,7 @@ function CardAgent({image, labelCardAgent, textAgent, name, password, email }) {
   return (
     <div className="peer w-100 cardMain p-0 d-flex flex-wrap">
       <div className="col-7 pb-0 cardMainTwo d-flex align-items-center">
-        <a href="#" className="d-block position-relative ">
+        <a href="/" className="d-block position-relative ">
           <img className="profilePictureAgent position-relative bdrs-50p" src={image} alt="Foto de perfil"/>
           <FontAwesomeIcon className="position-absolute start-0" icon={faCircle} />
         </a>

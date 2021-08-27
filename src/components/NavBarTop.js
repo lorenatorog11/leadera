@@ -13,7 +13,7 @@ function NavBarTop({Show}) {
       <div className="header-container d-flex flex-wrap">
         <ul className="nav-left col-4 mx-0 ps-4">
           <li>
-            <a className="sidebar-link td-n d-flex justify-content-center align-items-center" href="#">
+            <a className="sidebar-link td-n d-flex justify-content-center align-items-center" href="/">
               <h5 className="lh-1 mB-0 logo-text">LEADERA</h5>
             </a>
           </li>
@@ -29,7 +29,7 @@ function NavBarTop({Show}) {
             <BtnNavBarTop labelBtn={labelBtnThree}/>
           </li>
           <li className="">
-            <a href="#" className="">
+            <a href="/" className="">
               <img className="profilePicture bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Foto de perfil"/>
             </a>
           </li>

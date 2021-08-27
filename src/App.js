@@ -8,6 +8,8 @@ import RefreshPassword from './Pages/refreshPassword';
 import HomePage from './Pages/homePage';
 import Plan from './Pages/account/plan.js';
 import Profile from './Pages/account/profile';
+import EditProfile from './Pages/account/editProfile';
+import Agent from './Pages/account/agent';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route exact path='/home-page' component={HomePage} />
         <Route exact path='/account-plan' component={Plan} />
         <Route exact path='/account-profile' component={Profile} />
+        <Route exact path='/account-edit-profile' component={EditProfile} />
+        <Route exact path='/agent' component={Agent} />
       </Switch>
     </div>
   );

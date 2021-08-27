@@ -5,6 +5,10 @@
   background: rgb(60 59 59);
   color: white;
 }
+.btnMain:hover{
+  background: rgb(60 59 59);
+  color: white;
+}
 .navBarTop{
   background: rgb(60 59 59);
 }
@@ -71,4 +75,12 @@ li ul .dropdown-menu .dropdownMenuRelative{
 .linkStyle:hover{
   color: black;
   text-decoration: underline;
+}
+.btnMainDisabled{
+  background-color: rgb(224 226 234);
+  color: white;
+}
+.btnMainDisabled:hover{
+  background-color: rgb(224 226 234);
+  color: white;
 }

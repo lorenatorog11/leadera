@@ -47,12 +47,12 @@ function NavBarLeft({show, Show}) {
             </ul>}
           </li>
           <li className="nav-item mT-10">
-            <a className="sidebar-link" href="index.html">
+            <Link className="sidebar-link" to='/agent'>
               <span className="icon-holder">
                 <FontAwesomeIcon className="backgroundIcon" icon={faCommentDots} />
               </span>
               <span className="title">Agentes</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item mT-10 dropdown">
             <a data-bs-toggle="collapse" href="#collapseBtnTwo" role="button" aria-expanded="false" aria-controls="collapseBtnTwo">
@@ -67,27 +67,27 @@ function NavBarLeft({show, Show}) {
             {show ? "" : 
             <ul className="collapse dropdown-menu listDropdown bg-light" id="collapseBtnTwo">
               <li className="ps-2">
-                <a className='sidebar-link' href="basic-table.html">Campañas</a>
+                <a className='sidebar-link' href="/">Campañas</a>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="datatable.html">Conversaciones</a>
+                <a className='sidebar-link' href="/">Conversaciones</a>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="basic-table.html">Nuevos vs recurrentes</a>
+                <a className='sidebar-link' href="/">Nuevos vs recurrentes</a>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="datatable.html">Audiciencia</a>
+                <a className='sidebar-link' href="/">Audiciencia</a>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="basic-table.html">Geográfico</a>
+                <a className='sidebar-link' href="/">Geográfico</a>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="datatable.html">Conversaciones</a>
+                <a className='sidebar-link' href="/">Conversaciones</a>
               </li>
             </ul>}
           </li>
           <li className="nav-item mT-10">
-            <a className="sidebar-link" href="index.html">
+            <a className="sidebar-link" href="/">
               <span className="icon-holder">
                 <FontAwesomeIcon className="backgroundIcon" icon={faUser} />
               </span>
@@ -96,7 +96,7 @@ function NavBarLeft({show, Show}) {
           </li>
         </ul>
         <div className="navArrowShow mT-10 border-top border-dark">
-          <a><button id='' className="w-100 h-100 border-0 bg-transparent text-end" onClick={Show}>
+          <a href="/"><button id='' className="w-100 h-100 border-0 bg-transparent text-end" onClick={Show}>
             {show ? <FontAwesomeIcon className="backgroundIcon" icon={faArrowAltCircleRight} /> : <FontAwesomeIcon className="backgroundIcon" icon={faArrowAltCircleLeft}/>}
           </button></a>
         </div>

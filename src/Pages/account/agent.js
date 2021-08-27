@@ -7,11 +7,11 @@ import NavBarLeft from '../../components/NavBarLeft.js';
 import NavBarTop from '../../components/NavBarTop.js';
 import BtnMain from '../../components/BtnMain.js';
 import CardMain from '../../components/CardMain';
-import CardMainLink from '../../components/CardMainLink';
+import CardAgent from '../../components/CardAgent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
-class Plan extends Component {
+class Agent extends Component {
   constructor(props){  
     super(props);  
     this.state = {  
@@ -32,26 +32,21 @@ class Plan extends Component {
 
   render (){
     const labelBtn = 'CAMBIAR PLAN';
-    const labelLink = 'Ver métricas';
-    const labelLinkOne = 'Ver métricas';
-    const labelLinkTwo = 'Ver Agentes';
-
-    const link = '/';
-    const linkOne = '/';
-    const linkTwo = '/';
-
-    const labelCardMain = 'Costo Mensual';
-    const labelCardMainOne="Leads Totales";
-    const labelCardMainTwo="Leads Campaña Activa";
-    const labelCardMainThree="Agentes";
+    const labelBtnTwo = 'EDITAR';
+    const labelBtnThree= 'ACTIVAR AGENTE';
+    const labelCardMain = 'Agentes Activos';
+    const textOne = "1";
+    const textTwo = "/3";
+    const image = "https://randomuser.me/api/portraits/men/10.jpg";
 
 
-    const textOne = "$ 1’100.000";
-    const textTwo = "250";
-    const textThree = "45";
-    const textThree_ = "/100";
-    const textFour = "2";
-    const textFour_ = "/3";
+    const labelCardAgent ="Chats";
+    const textAgentOne ="50";
+    const textAgentTwo ="0";
+
+    const userOne = "Carlos";
+    const passwordOne = "******";
+    const emailOne = "andres@teki.com";
 
     return (
       <div>
@@ -62,11 +57,10 @@ class Plan extends Component {
             {/* Section: Plan */}
             <div className="row">
               <div className="col-4">
-                <h1>PLAN XXX - XXX</h1>
-                <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
+                <h1>AGENTES</h1>
               </div>
               <div className="col-8">
-                <a className="d-flex justify-content-end" href="#"><BtnMain labelBtn={labelBtn} /></a>                
+                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
               </div>              
             </div>
             <div className="row mt-5">
@@ -74,20 +68,30 @@ class Plan extends Component {
                 <p className='text-hyphens'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
               </div>
               <div className="col-7 d-flex flex-wrap">
-                <CardMain labelCardMain={labelCardMain} textOne={textOne} />
+                <CardMain labelCardMain={labelCardMain} textOne={textOne} textTwo={textTwo}/>
               </div>              
             </div>  
-            <div className="row mt-4 d-flex flex-wrap justify-content-between">
-              <div className="col-4 d-flex flex-wrap">
-                <CardMainLink labelCardMain={labelCardMainOne} textOne={textTwo} labelLink={labelLink} link={link}/>
-              </div> 
-              <div className="col-4 d-flex flex-wrap">
-                <CardMainLink labelCardMain={labelCardMainTwo} textOne={textThree} textTwo={textThree_} labelLink={labelLinkOne} link={linkOne}/>
-              </div>             
-              <div className="col-3 d-flex flex-wrap">
-                <CardMainLink labelCardMain={labelCardMainThree} textOne={textFour} textTwo={textFour_} labelLink={labelLinkTwo} link={linkTwo}/>
-              </div>             
-            </div>                    
+            {/* Section:  Agent*/}
+            <div className="row mt-5">
+              <div className="col-8">
+                <h1>AGENTES ACTIVOS</h1>
+                <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />Agente en proceso de activación</h5>
+              </div>
+              <div className="col-2">
+                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtnTwo} /></a>                
+              </div>
+              <div className="col-2">
+                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtnThree} /></a>                
+              </div>                   
+            </div>
+            <div className="row d-flex flex-wrap mt-5">
+              <div className="col-3">
+                <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
+              </div>
+              <div className="col-3">
+                <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentTwo} name={userOne} password={passwordOne} email={emailOne}/>
+              </div>
+            </div>          
           </main>
         </div>
       </div>
@@ -95,7 +99,7 @@ class Plan extends Component {
   }
 };
 
-export default Plan;
+export default Agent;
 
 
 
