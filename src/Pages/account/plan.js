@@ -20,8 +20,14 @@ class Plan extends Component {
   }
   Show = (e)  =>  { 
     e.preventDefault();
-    document.getElementById('app').classList.toggle('is-collapsed');
-    document.getElementById('containerMain').classList.toggle('containerMain');
+    if (this.state.show){
+      document.getElementById('app').classList.add('is-collapsed');
+      document.getElementById('containerMain').classList.add('containerMain');
+    }else if (this.state.show === false ){
+      document.getElementById('app').classList.remove('is-collapsed');
+      document.getElementById('containerMain').classList.remove('containerMain');
+    }
+
     const show = this.state.show ? false : this.state.show === false? true : '';
     this.setState ({show: show})};
   
@@ -56,35 +62,35 @@ class Plan extends Component {
     return (
       <div>
         <NavBarTop/>
-        <div className="app is-collapsed" id='app'>
+        <div className="app" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
             {/* Section: Plan */}
             <div className="row">
-              <div className="col-4">
+              <div className="col-12 col-md-4">
                 <h1>PLAN XXX - XXX</h1>
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
               </div>
-              <div className="col-8">
-                <a className="d-flex justify-content-end" href="#"><BtnMain labelBtn={labelBtn} /></a>                
+              <div className="col-12 col-md-8">
+                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
               </div>              
             </div>
             <div className="row mt-5">
-              <div className="col-5">
+              <div className="col-12 col-md-5">
                 <p className='text-hyphens'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
               </div>
-              <div className="col-7 d-flex flex-wrap">
+              <div className="col-12 col-md-7 d-flex flex-wrap">
                 <CardMain labelCardMain={labelCardMain} textOne={textOne} />
               </div>              
             </div>  
-            <div className="row mt-4 d-flex flex-wrap justify-content-between">
-              <div className="col-4 d-flex flex-wrap">
+            <div className="row mt-0 mt-md-4 d-flex flex-wrap justify-content-between">
+              <div className="col-12 col-md-4 mt-4 mt-md-0 d-flex flex-wrap">
                 <CardMainLink labelCardMain={labelCardMainOne} textOne={textTwo} labelLink={labelLink} link={link}/>
               </div> 
-              <div className="col-4 d-flex flex-wrap">
+              <div className="col-12 col-md-4 mt-4 mt-md-0 d-flex flex-wrap">
                 <CardMainLink labelCardMain={labelCardMainTwo} textOne={textThree} textTwo={textThree_} labelLink={labelLinkOne} link={linkOne}/>
               </div>             
-              <div className="col-3 d-flex flex-wrap">
+              <div className="col-12 col-md-3 mt-4 mt-md-0 d-flex flex-wrap">
                 <CardMainLink labelCardMain={labelCardMainThree} textOne={textFour} textTwo={textFour_} labelLink={labelLinkTwo} link={linkTwo}/>
               </div>             
             </div>                    

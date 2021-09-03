@@ -12,6 +12,11 @@ function NavBarTop({Show}) {
       {/* ### $Topbar ### */}
       <div className="header-container d-flex flex-wrap">
         <ul className="nav-left col-4 mx-0 ps-4">
+          <li className="d-lg-none">
+            <button id='sidebar-toggle' className="sidebar-toggle" onClick={Show}>
+              <i class="ti-menu"></i>
+            </button>
+          </li>
           <li>
             <a className="sidebar-link td-n d-flex justify-content-center align-items-center" href="/">
               <h5 className="lh-1 mB-0 logo-text">LEADERA</h5>

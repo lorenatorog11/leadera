@@ -21,8 +21,14 @@ class EditProfile extends Component {
   }
   Show = (e)  =>  { 
     e.preventDefault();
-    document.getElementById('app').classList.toggle('is-collapsed');
-    document.getElementById('containerMain').classList.toggle('containerMain');
+    if (this.state.show){
+      document.getElementById('app').classList.add('is-collapsed');
+      document.getElementById('containerMain').classList.add('containerMain');
+    }else if (this.state.show === false ){
+      document.getElementById('app').classList.remove('is-collapsed');
+      document.getElementById('containerMain').classList.remove('containerMain');
+    }
+
     const show = this.state.show ? false : this.state.show === false? true : '';
     this.setState ({show: show})};
 
@@ -34,7 +40,7 @@ class EditProfile extends Component {
     return (
       <div>
         <NavBarTop/>
-        <div className="app is-collapsed" id='app'>
+        <div className="app" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
             {/* Section: Plan */}
@@ -51,47 +57,47 @@ class EditProfile extends Component {
                 <form>
                   <div className="row">
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputName">Nombres</label>
+                      <label className="form-label fw-bolder" htmlFor="inputName">Nombres</label>
                       <input type="text" className="form-control col-8 mb-2" id="inputName" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputFactory">Empresa</label>
+                      <label className="form-label fw-bolder" htmlFor="inputFactory">Empresa</label>
                       <input type="text" className="form-control col-8 mb-2" id="inputFactory" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputLastName">Apellidos</label>
+                      <label className="form-label fw-bolder" htmlFor="inputLastName">Apellidos</label>
                       <input type="text" className="form-control col-8 mb-2" id="inputLastName" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputNumber">Nit</label>
+                      <label className="form-label fw-bolder" htmlFor="inputNumber">Nit</label>
                       <input type="number" className="form-control col-8 mb-2" id="inputNumber" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputEmail">Email</label>
+                      <label className="form-label fw-bolder" htmlFor="inputEmail">Email</label>
                       <input type="email" className="form-control col-8 mb-2" id="inputEmail" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputCountry">Pais</label>
+                      <label className="form-label fw-bolder" htmlFor="inputCountry">Pais</label>
                       <select id="inputCountry" className="form-control form-select col-8 mb-2">
                         <option></option>
                       </select>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputNumberTwo">Teléfono</label>
+                      <label className="form-label fw-bolder" htmlFor="inputNumberTwo">Teléfono</label>
                       <input type="number" className="form-control col-8 mb-2" id="inputNumberTwo" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputDepartment">Departamento</label>
+                      <label className="form-label fw-bolder" htmlFor="inputDepartment">Departamento</label>
                       <select id="inputDepartment" className="form-control form-select col-8 mb-2">
                         <option></option>
                       </select>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputPhone">Celular</label>
+                      <label className="form-label fw-bolder" htmlFor="inputPhone">Celular</label>
                       <input type="number" className="form-control col-8 mb-2" id="inputPhone" placeholder=""/>
                     </div>
                     <div className="mb-3 col-md-6">
-                      <label className="form-label fw-bolder" for="inputCity">Ciudad</label>
+                      <label className="form-label fw-bolder" htmlFor="inputCity">Ciudad</label>
                       <select id="inputCity" className="form-control form-select col-8 mb-2">
                         <option></option>
                       </select>
@@ -114,7 +120,7 @@ class EditProfile extends Component {
                 <h1>CREDENCIALES DE ACCESO</h1>
               </div>
               <div className="col-4">
-                <a className="d-flex justify-content-end" href="#"><BtnMainDisabled labelBtn={labelBtn} /></a>                
+                <a className="d-flex justify-content-end" href="/"><BtnMainDisabled labelBtn={labelBtn} /></a>                
               </div>              
             </div>
             <div className="row mt-5 d-flex flex-wrap">
@@ -122,15 +128,15 @@ class EditProfile extends Component {
                 <form>
                   <div className="row d-flex flex-column">
                     <div className="mb-3 col-6">
-                      <label className="form-label fw-bolder" for="inputName">Nombre de Usuario</label>
+                      <label className="form-label fw-bolder" htmlFor="inputName">Nombre de Usuario</label>
                       <input type="text" className="form-control mb-2" id="inputName" placeholder=""/>
                     </div>
-                    <div class="mb-3 col-6">
+                    <div className="mb-3 col-6">
                       <div className='d-flex justify-content-between'>
                         <label className="form-label fw-bolder" or="inputPassword">Contraseña</label>
                         <p className='m-0'><FontAwesomeIcon icon={faEye} /> mostar</p>
                       </div>
-                      <input type="password" class="form-control mb-2" id="inputPassword" placeholder=""/>
+                      <input type="password" className="form-control mb-2" id="inputPassword" placeholder=""/>
                     </div>
                   </div>
                   <div className="M-Y">

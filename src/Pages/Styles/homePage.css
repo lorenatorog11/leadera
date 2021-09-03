@@ -47,6 +47,7 @@
 .mainContainer{
   position: relative;
   top: 65px;
+  padding-left: 70px;
 }
 .containerMain{
   padding-left: 280px;

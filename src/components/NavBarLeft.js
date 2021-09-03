@@ -7,7 +7,7 @@ import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-r
 
 function NavBarLeft({show, Show}) {
   return (
-    <div className="sidebar">
+    <div className="sidebar" id="sidebar">
       {/* #Left Sidebar ==================== */}
       <div className="sidebar-inner btnNavBarTop">
         {/* ### $Sidebar Menu ### */}
@@ -30,7 +30,7 @@ function NavBarLeft({show, Show}) {
               </span>
               <span className="title">Cuenta</span>
             </a>
-            {show ? "" :
+            {show ? "":
             <ul className="collapse dropdown-menu listDropdown bg-light" id="collapseBtn">
               <li className="ps-2">
                 <Link className="sidebar-link"  to='/account-plan'>Plan</Link>
@@ -42,7 +42,7 @@ function NavBarLeft({show, Show}) {
                 <Link className="sidebar-link"  to='/account-profile'>Perfil</Link>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="datatable.html">Facturación</a>
+                <a className='sidebar-link' href="/">Facturación</a>
               </li>
             </ul>}
           </li>
@@ -64,7 +64,7 @@ function NavBarLeft({show, Show}) {
               </span>
               <span className="title">Métricas</span>
             </a>
-            {show ? "" : 
+            {show ? "" :
             <ul className="collapse dropdown-menu listDropdown bg-light" id="collapseBtnTwo">
               <li className="ps-2">
                 <a className='sidebar-link' href="/">Campañas</a>
@@ -84,7 +84,7 @@ function NavBarLeft({show, Show}) {
               <li className="ps-2">
                 <a className='sidebar-link' href="/">Conversaciones</a>
               </li>
-            </ul>}
+            </ul> }
           </li>
           <li className="nav-item mT-10">
             <a className="sidebar-link" href="/">
@@ -96,9 +96,9 @@ function NavBarLeft({show, Show}) {
           </li>
         </ul>
         <div className="navArrowShow mT-10 border-top border-dark">
-          <a href="/"><button id='' className="w-100 h-100 border-0 bg-transparent text-end" onClick={Show}>
+          <button id='' className="w-100 h-100 border-0 bg-transparent text-end" onClick={Show}>
             {show ? <FontAwesomeIcon className="backgroundIcon" icon={faArrowAltCircleRight} /> : <FontAwesomeIcon className="backgroundIcon" icon={faArrowAltCircleLeft}/>}
-          </button></a>
+          </button>
         </div>
       </div>
     </div>

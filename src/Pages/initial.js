@@ -42,8 +42,8 @@ class Initial extends Component {
                 </div>
               </div>
               <div className="col-12 p-0 my-4">
-                <Link to='/remember-user'><button className='col-6 lickForget' href='#'>Olvidaste tu usuario?</button></Link>
-                <Link to='/remember-password'><button className='col-6 lickForget' href='#'>Olvidaste tu contraseña?</button></Link>
+                <Link to='/remember-user'><button className='col-6 lickForget'>Olvidaste tu usuario?</button></Link>
+                <Link to='/remember-password'><button className='col-6 lickForget'>Olvidaste tu contraseña?</button></Link>
               </div>
             </form>
           </div>

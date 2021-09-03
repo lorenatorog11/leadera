@@ -25,7 +25,7 @@ class NavBarLeft extends Component {
           {/* ### $Sidebar Menu ### */}
           <ul className="sidebar-menu scrollable pos-r">
             <li className="nav-item mT-30 actived menuActive">
-              <a className="sidebar-link" href="index.html">
+              <a className="sidebar-link" href="/">
                 <span className="icon-holder">
                   <FontAwesomeIcon className="backgroundIcon" icon={faHome} />
                 </span>
@@ -44,21 +44,21 @@ class NavBarLeft extends Component {
               </a>
               <ul className="showLi" id="collapseBtn">
                 <li className="ps-2">
-                  <a className='sidebar-link' href="basic-table.html">Plan</a>
+                  <a className='sidebar-link' href="/">Plan</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="datatable.html">Campaña</a>
+                  <a className='sidebar-link' href="/">Campaña</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="basic-table.html">Perfil</a>
+                  <a className='sidebar-link' href="/">Perfil</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="datatable.html">Facturación</a>
+                  <a className='sidebar-link' href="/">Facturación</a>
                 </li>
               </ul>
             </li>
             <li className="nav-item mT-10">
-              <a className="sidebar-link" href="index.html">
+              <a className="sidebar-link" href="/">
                 <span className="icon-holder">
                   <FontAwesomeIcon className="backgroundIcon" icon={faCommentDots} />
                 </span>
@@ -77,27 +77,27 @@ class NavBarLeft extends Component {
               </a>
               <ul className="collapse dropdown-menu" id="collapseBtnTwo">
                 <li className="ps-2">
-                  <a className='sidebar-link' href="basic-table.html">Campañas</a>
+                  <a className='sidebar-link' href="/">Campañas</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="datatable.html">Conversaciones</a>
+                  <a className='sidebar-link' href="/">Conversaciones</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="basic-table.html">Nuevos vs recurrentes</a>
+                  <a className='sidebar-link' href="/">Nuevos vs recurrentes</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="datatable.html">Audiciencia</a>
+                  <a className='sidebar-link' href="/">Audiciencia</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="basic-table.html">Geográfico</a>
+                  <a className='sidebar-link' href="/">Geográfico</a>
                 </li>
                 <li className="ps-2">
-                  <a className='sidebar-link' href="datatable.html">Conversaciones</a>
+                  <a className='sidebar-link' href="/">Conversaciones</a>
                 </li>
               </ul>
             </li>
             <li className="nav-item mT-10">
-              <a className="sidebar-link" href="index.html">
+              <a className="sidebar-link" href="/">
                 <span className="icon-holder">
                   <FontAwesomeIcon className="backgroundIcon" icon={faUser} />
                 </span>

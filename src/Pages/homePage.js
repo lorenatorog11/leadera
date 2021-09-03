@@ -24,8 +24,14 @@ class HomePage extends Component {
   }
   Show = (e)  =>  { 
     e.preventDefault();
-    document.getElementById('app').classList.toggle('is-collapsed');
-    document.getElementById('containerMain').classList.toggle('containerMain');
+    if (this.state.show){
+      document.getElementById('app').classList.add('is-collapsed');
+      document.getElementById('containerMain').classList.add('containerMain');
+    }else if (this.state.show === false ){
+      document.getElementById('app').classList.remove('is-collapsed');
+      document.getElementById('containerMain').classList.remove('containerMain');
+    }
+
     const show = this.state.show ? false : this.state.show === false? true : '';
     this.setState ({show: show})};
   
@@ -80,29 +86,29 @@ class HomePage extends Component {
 
     return (
       <div>
-        <NavBarTop/>
-        <div className="app is-collapsed" id='app'>
+        <NavBarTop Show={this.Show}/>
+        <div className="app" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
             {/* Section: Plan */}
             <div className="row">
-              <div className="col-4">
+              <div className="col-12 col-md-4">
                 <h1>PLAN XXX - XXX</h1>
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
               </div>
-              <div className="col-8">
-                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
+              <div className="col-12 col-md-8">
+                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
               </div>              
             </div>
             <div className="row mt-5">
-              <div className="col-4">
+              <div className="col-12 col-md-4">
                 <p className='text-hyphens'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
               </div>
-              <div className="col-8 d-flex flex-wrap">
-                <div className="col-8">
+              <div className="col-12 col-md-8 d-flex flex-wrap">
+                <div className="col-12 col-md-8 mt-4 mt-md-0">
                   <CardMain labelCardMain={labelCardMain} textOne={textOne} textTwo={textOne_}/>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-md-4 mt-4 mt-md-0">
                   <CardMain labelCardMain={labelCardMainOne} textOne={textTwo} textTwo={textTwo_}/>
                 </div>
               </div>              
@@ -110,45 +116,45 @@ class HomePage extends Component {
             <hr/>
             {/* Section:  Campaign*/}
             <div className="row">
-              <div className="col-4">
+              <div className="col-8 col-md-4">
                 <select className="form-select col-10" aria-label="Default select example">
                   <option value="1">Campaña 1</option>
                   <option value="2">Campaña 2</option>
                   <option value="3">Campaña 3</option>
                 </select>
               </div>
-              <div className="col-8 d-flex justify-content-end">
-                <a className="d-flex justify-content-end ps-3" href="/">
+              <div className="col-12 col-md-8 d-flex flex-wrap justify-content-md-end">
+                <a className="d-flex justify-content-start justify-content-end pe-0 pe-sm-2 ps-md-3 mt-3 mt-md-0" href="/">
                   <BtnMain labelBtn={labelBtnTwo} /></a> 
-                <a className="d-flex justify-content-end ps-3" href="/">
+                <a className="d-flex justify-content-start justify-content-end pe-0 pe-sm-2 ps-md-3 mt-3 mt-md-0" href="/">
                   <BtnMain labelBtn={labelBtnThree} /></a>                     
               </div>              
             </div>        
             <div className="row mt-5">              
-              <div className="col-8 d-flex flex-wrap">      
-                <div className="col-6">
+              <div className="col-12 col-md-8 d-flex flex-wrap">      
+                <div className="col-12 col-md-6">
                   <h5 className="mt-3"><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
                   <p className='text-hyphens my-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
                 </div>        
-                <div className="col-6">
+                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
                   <CardMain labelCardMain={labelCardMainTwo} textOne={textThree} />
                 </div>
-                <div className="col-12">
+                <div className="col-12 col-sm-6 col-md-12 mt-3 mt-sm-0">
                   <CardMain labelCardMain={labelCardMainThree} textOne={textFour}/>
                 </div>
               </div>
-              <div className="col-4 d-flex flex-column justify-content-between">
-                <div className="col-12">
+              <div className="col-12 col-md-4 d-flex flex-column justify-content-between">
+                <div className="col-12 mt-4 mt-md-0">
                   <CardMainTwo labelCardMainOne={labelCardMainFour} labelCardMainTwo={labelCardMainFive} labelCardMainThree={labelCardMainSix} textOne={textFive} textTwo={textSix} textThree={textSeven}/>
                 </div>
-                <div className="col-12">
+                <div className="col-12 mt-4 mt-md-0">
                   <CardMain labelCardMain={labelCardMainSeven} textOne={textEigth}/>
                 </div>  
               </div>              
             </div>
             <div className="row mt-5">              
-              <div className="col-6 d-flex">     
-                <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+              <div className="col-12 col-md-6 d-flex justify-content-center">     
+                <div id="carouselExampleIndicators" className="carousel slide col-8 col-md-12" data-bs-ride="carousel">
                   <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -175,12 +181,14 @@ class HomePage extends Component {
                   </button>
                 </div> 
               </div>
-              <div className="col-6">
-                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtnFour} /></a>
+              <div className="col-12 col-md-6">
+                <a className="d-flex justify-content-start justify-content-md-end mt-3 mt-md-0" href="/">
+                  <BtnMain labelBtn={labelBtnFour} />
+                </a>
                 <div className="col-12 mt-4">
                   <h2>ANUNCIO</h2>
-                  <h5 className="mt-2"><FontAwesomeIcon className="" icon={faCircle} />15 días activo</h5>
-                  <p className='text-hyphens my-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
+                  <h5 className="mt-3 mt-md-2"><FontAwesomeIcon className="" icon={faCircle} />15 días activo</h5>
+                  <p className='text-hyphens my-3 my-md-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
                 </div>
                 <div className="d-flex flex-wrap">
                   <div className="col-6 p-5">
@@ -204,19 +212,19 @@ class HomePage extends Component {
             <hr/>
             {/* Section:  Agent*/}
             <div className="row">
-              <div className="col-4">
+              <div className="col-12 col-md-4">
                 <h1>AGENTES ACTIVOS</h1>
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />Agente en proceso de activación</h5>
               </div>
               <div className="col-8">
-                <a className="d-flex justify-content-end" href="/"><BtnMain labelBtn={labelBtnFive} /></a>                
+                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMain labelBtn={labelBtnFive} /></a>                
               </div>              
             </div>
             <div className="row d-flex flex-wrap">
-              <div className="col-3">
+              <div className="col-12 col-sm-6 col-md-3 mt-3 mt-md-0">
                 <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
               </div>
-              <div className="col-3">
+              <div className="col-12 col-sm-6 col-md-3 mt-3 mt-md-0">
                 <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentTwo} name={userOne} password={passwordOne} email={emailOne}/>
               </div>
             </div>

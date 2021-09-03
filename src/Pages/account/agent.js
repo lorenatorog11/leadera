@@ -20,8 +20,14 @@ class Agent extends Component {
   }
   Show = (e)  =>  { 
     e.preventDefault();
-    document.getElementById('app').classList.toggle('is-collapsed');
-    document.getElementById('containerMain').classList.toggle('containerMain');
+    if (this.state.show){
+      document.getElementById('app').classList.add('is-collapsed');
+      document.getElementById('containerMain').classList.add('containerMain');
+    }else if (this.state.show === false ){
+      document.getElementById('app').classList.remove('is-collapsed');
+      document.getElementById('containerMain').classList.remove('containerMain');
+    }
+
     const show = this.state.show ? false : this.state.show === false? true : '';
     this.setState ({show: show})};
   
@@ -51,7 +57,7 @@ class Agent extends Component {
     return (
       <div>
         <NavBarTop/>
-        <div className="app is-collapsed" id='app'>
+        <div className="app" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
             {/* Section: Plan */}
