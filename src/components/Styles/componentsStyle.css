@@ -84,3 +84,18 @@ li ul .dropdown-menu .dropdownMenuRelative{
   background-color: rgb(224 226 234);
   color: white;
 }
+@media (max-width: 992px){
+  .logo-text{
+    font-size: 35px;
+  }
+  .btnNavBarTop{
+    font-size: 12px;
+  }
+  .btnMain{
+    font-size: 12px;
+  }
+  .navBarTopCollapse{
+    position: absolute;
+    top: 65px;
+  }
+}

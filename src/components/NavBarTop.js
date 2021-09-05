@@ -1,6 +1,9 @@
 import React from 'react';
 import BtnNavBarTop from './BtnNavBarTop';
 import './Styles/componentsStyle.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+
 
 function NavBarTop({Show}) {
   const labelBtn = 'CAMBIAR PLAN';
@@ -11,9 +14,9 @@ function NavBarTop({Show}) {
     <div className="header navbar navBarTop w-100">
       {/* ### $Topbar ### */}
       <div className="header-container d-flex flex-wrap">
-        <ul className="nav-left col-4 mx-0 ps-4">
+        <ul className="nav-left col-6 col-lg-4 mx-0 ps-4 d-flex align-items-center">
           <li className="d-lg-none">
-            <button id='sidebar-toggle' className="sidebar-toggle" onClick={Show}>
+            <button id='sidebar-toggle' className="sidebar-toggle bg-transparent" onClick={Show}>
               <i class="ti-menu"></i>
             </button>
           </li>
@@ -23,20 +26,29 @@ function NavBarTop({Show}) {
             </a>
           </li>
         </ul>
-        <ul className="nav-right col-8 d-flex justify-content-end">
+        <div className="navbar navbar-expand-lg col-5 col-lg-7">
+          <div className="container-fluid">
+            <button className="navbar-toggler ms-auto m-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <FontAwesomeIcon className="text-white" icon={faSortDown} /> 
+            </button>
+            <div className="collapse navbar-collapse w-100 navBarTopCollapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-between">
+                <li className="nav-item rounded">
+                  <BtnNavBarTop labelBtn={labelBtn}/>
+                </li>
+                <li className="nav-item rounded">
+                  <BtnNavBarTop labelBtn={labelBtnTwo}/>
+                </li>
+                <li className="nav-item rounded">
+                  <BtnNavBarTop labelBtn={labelBtnThree}/>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <ul className="nav-right col-1 d-flex justify-content-end align-items-center">
           <li className="">
-            <BtnNavBarTop labelBtn={labelBtn}/>
-          </li>
-          <li className="">
-            <BtnNavBarTop labelBtn={labelBtnTwo}/>
-          </li>
-          <li className="">
-            <BtnNavBarTop labelBtn={labelBtnThree}/>
-          </li>
-          <li className="">
-            <a href="/" className="">
-              <img className="profilePicture bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Foto de perfil"/>
-            </a>
+              <img className="profilePicture w-100 rounded-circle" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Foto de perfil"/>
           </li>
         </ul>
       </div>

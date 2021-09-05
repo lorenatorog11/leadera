@@ -6,13 +6,11 @@ import '../../assets/static/fonts/icons/themify/themify.eot';
 import NavBarLeft from '../../components/NavBarLeft.js';
 import NavBarTop from '../../components/NavBarTop.js';
 import BtnMain from '../../components/BtnMain.js';
+import BtnMainDisabled from '../../components/BtnMainDisabled';
 import CardMain from '../../components/CardMain';
-import CardAgent from '../../components/CardAgent';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import EditCardAgent from '../../components/EditCardAgent';
 
-class Agent extends Component {
+class EditAgent extends Component {
   constructor(props){  
     super(props);  
     this.state = {  
@@ -41,6 +39,7 @@ class Agent extends Component {
     const labelBtn = 'CAMBIAR PLAN';
     const labelBtnTwo = 'EDITAR';
     const labelBtnThree= 'ACTIVAR AGENTE';
+    const labelBtnFour= 'GUARDAR CAMBIOS';
     const labelCardMain = 'Agentes Activos';
     const textOne = "1";
     const textTwo = "/3";
@@ -49,7 +48,6 @@ class Agent extends Component {
 
     const labelCardAgent ="Chats";
     const textAgentOne ="50";
-    const textAgentTwo ="0";
 
     const userOne = "Carlos";
     const passwordOne = "******";
@@ -80,23 +78,24 @@ class Agent extends Component {
             </div>  
             {/* Section:  Agent*/}
             <div className="row mt-5">
-              <div className="col-12 col-md-8">
+              <div className="col-12 col-md-4">
                 <h1>AGENTES ACTIVOS</h1>
-                <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />Agente en proceso de activación</h5>
               </div>
-              <div className="col-12 col-md-2 mt-3 mt-md-0">
-                <Link className="d-flex justify-content-start justify-content-md-end" to='/edit-agent'><BtnMain labelBtn={labelBtnTwo} /></Link>                              
+              <div className="col-12 col-md-4 mt-3 mt-md-0">
+                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMainDisabled labelBtn={labelBtnTwo} /></a>                
               </div>
-              <div className="col-12 col-md-2 mt-3 mt-md-0">
-                <Link className="d-flex justify-content-start justify-content-md-end" to='/create-agent'><BtnMain labelBtn={labelBtnThree} /></Link>                
+              <div className="col-12 col-md-4 mt-3 mt-md-0">
+                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMainDisabled labelBtn={labelBtnThree} /></a>                
               </div>                   
             </div>
             <div className="row d-flex flex-wrap mt-5">
-              <div className="col-12 col-sm-6 col-md-4 mt-3 mt-sm-0">
-                <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
+              <div className="col-12 col-md-6 col-lg-4">
+                <EditCardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
               </div>
-              <div className="col-12 col-sm-6 col-md-4 mt-3 mt-sm-0">
-                <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentTwo} name={userOne} password={passwordOne} email={emailOne}/>
+            </div>
+            <div className="row d-flex flex-wrap mt-5">
+              <div className="col-12 col-md-4">
+                <a className="d-flex justify-content-start" href="/"><BtnMain labelBtn={labelBtnFour} /></a>                
               </div>
             </div>          
           </main>
@@ -106,7 +105,7 @@ class Agent extends Component {
   }
 };
 
-export default Agent;
+export default EditAgent;
 
 
 

@@ -10,6 +10,8 @@ import Plan from './Pages/account/plan.js';
 import Profile from './Pages/account/profile';
 import EditProfile from './Pages/account/editProfile';
 import Agent from './Pages/account/agent';
+import EditAgent from './Pages/account/editAgent';
+import CreateAgent from './Pages/account/CreateAgent';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route exact path='/account-profile' component={Profile} />
         <Route exact path='/account-edit-profile' component={EditProfile} />
         <Route exact path='/agent' component={Agent} />
+        <Route exact path='/edit-agent' component={EditAgent}/>
+        <Route exact path='/create-agent' component={CreateAgent}/>
       </Switch>
     </div>
   );

@@ -61,7 +61,7 @@ class Plan extends Component {
 
     return (
       <div>
-        <NavBarTop/>
+        <NavBarTop Show={this.Show}/>
         <div className="app" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} Hide={this.Hide}/>
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">

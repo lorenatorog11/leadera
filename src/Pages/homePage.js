@@ -92,11 +92,11 @@ class HomePage extends Component {
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
             {/* Section: Plan */}
             <div className="row">
-              <div className="col-12 col-md-4">
+              <div className="col-12 col-md-8">
                 <h1>PLAN XXX - XXX</h1>
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
               </div>
-              <div className="col-12 col-md-8">
+              <div className="col-12 col-md-4">
                 <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
               </div>              
             </div>
@@ -131,23 +131,23 @@ class HomePage extends Component {
               </div>              
             </div>        
             <div className="row mt-5">              
-              <div className="col-12 col-md-8 d-flex flex-wrap">      
+              <div className="col-12 col-lg-8 d-flex flex-wrap">      
                 <div className="col-12 col-md-6">
                   <h5 className="mt-3"><FontAwesomeIcon className="" icon={faCircle} />  Activo desde 5 de Junio de 2021</h5>
                   <p className='text-hyphens my-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
                 </div>        
-                <div className="col-12 col-sm-6 mt-3 mt-sm-0">
+                <div className="col-12 col-sm-6 mt-3 ">
                   <CardMain labelCardMain={labelCardMainTwo} textOne={textThree} />
                 </div>
-                <div className="col-12 col-sm-6 col-md-12 mt-3 mt-sm-0">
+                <div className="col-12 col-sm-6 col-md-12 mt-3 ">
                   <CardMain labelCardMain={labelCardMainThree} textOne={textFour}/>
                 </div>
               </div>
-              <div className="col-12 col-md-4 d-flex flex-column justify-content-between">
-                <div className="col-12 mt-4 mt-md-0">
+              <div className="col-12 col-lg-4 d-flex flex-column justify-content-between">
+                <div className="col-12 mt-4 mt-md-3">
                   <CardMainTwo labelCardMainOne={labelCardMainFour} labelCardMainTwo={labelCardMainFive} labelCardMainThree={labelCardMainSix} textOne={textFive} textTwo={textSix} textThree={textSeven}/>
                 </div>
-                <div className="col-12 mt-4 mt-md-0">
+                <div className="col-12 mt-4 mt-md-3">
                   <CardMain labelCardMain={labelCardMainSeven} textOne={textEigth}/>
                 </div>  
               </div>              
@@ -221,10 +221,10 @@ class HomePage extends Component {
               </div>              
             </div>
             <div className="row d-flex flex-wrap">
-              <div className="col-12 col-sm-6 col-md-3 mt-3 mt-md-0">
+              <div className="col-12 col-sm-6 col-md-4 mt-3 mt-md-0">
                 <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
               </div>
-              <div className="col-12 col-sm-6 col-md-3 mt-3 mt-md-0">
+              <div className="col-12 col-sm-6 col-md-4 mt-3 mt-md-0">
                 <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentTwo} name={userOne} password={passwordOne} email={emailOne}/>
               </div>
             </div>

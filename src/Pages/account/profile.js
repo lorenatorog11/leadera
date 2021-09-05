@@ -27,17 +27,13 @@ class Profile extends Component {
 
     const show = this.state.show ? false : this.state.show === false? true : '';
     this.setState ({show: show})};
-  
-  ShowTwo = (e)  =>  { 
-    e.preventDefault();
-    document.getElementById('sidebar').classList.toggle('sidebar')};
 
   render (){
     const labelBtn = 'EDITAR';
 
     return (
       <div>
-        <NavBarTop Show={this.ShowTwo}/>
+        <NavBarTop Show={this.Show}/>
         <div className="app" id='app'>
           <NavBarLeft show={this.state.show} Show={this.Show} />
           <main className="container d-fluid pe-4 py-5 mainContainer" id="containerMain">
