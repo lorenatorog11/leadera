@@ -80,14 +80,14 @@ class Agent extends Component {
             </div>  
             {/* Section:  Agent*/}
             <div className="row mt-5">
-              <div className="col-12 col-md-8">
+              <div className="col-12 col-md-4">
                 <h1>AGENTES ACTIVOS</h1>
                 <h5 className=""><FontAwesomeIcon className="" icon={faCircle} />Agente en proceso de activación</h5>
               </div>
-              <div className="col-12 col-md-2 mt-3 mt-md-0">
+              <div className="col-12 col-md-4 mt-3 mt-md-0">
                 <Link className="d-flex justify-content-start justify-content-md-end" to='/edit-agent'><BtnMain labelBtn={labelBtnTwo} /></Link>                              
               </div>
-              <div className="col-12 col-md-2 mt-3 mt-md-0">
+              <div className="col-12 col-md-4 mt-3 mt-md-0">
                 <Link className="d-flex justify-content-start justify-content-md-end" to='/create-agent'><BtnMain labelBtn={labelBtnThree} /></Link>                
               </div>                   
             </div>

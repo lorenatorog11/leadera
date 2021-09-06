@@ -6,9 +6,11 @@ import '../../assets/static/fonts/icons/themify/themify.eot';
 import NavBarLeft from '../../components/NavBarLeft.js';
 import NavBarTop from '../../components/NavBarTop.js';
 import BtnMain from '../../components/BtnMain.js';
-import BtnMainDisabled from '../../components/BtnMainDisabled';
-import CardMain from '../../components/CardMain';
-import EditCardAgent from '../../components/EditCardAgent';
+import CreateCardAgent from '../../components/CreateCardAgent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import CardAgent from '../../components/CardAgent';
+import { Link } from 'react-router-dom';
 
 class CreateAgent extends Component {
   constructor(props){  
@@ -36,13 +38,7 @@ class CreateAgent extends Component {
     this.setState ({show: false})};
 
   render (){
-    const labelBtn = 'CAMBIAR PLAN';
-    const labelBtnTwo = 'EDITAR';
-    const labelBtnThree= 'ACTIVAR AGENTE';
-    const labelBtnFour= 'GUARDAR CAMBIOS';
-    const labelCardMain = 'Agentes Activos';
-    const textOne = "1";
-    const textTwo = "/3";
+    const labelBtnFour= 'ACTIVAR AGENTES';
     const image = "https://randomuser.me/api/portraits/men/10.jpg";
 
 
@@ -62,35 +58,26 @@ class CreateAgent extends Component {
             {/* Section: Plan */}
             <div className="row">
               <div className="col-12 col-md-8">
-                <h1>AGENTES</h1>
+                <h1>CREAR AGENTE</h1>
               </div>
               <div className="col-12 col-md-4">
-                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMain labelBtn={labelBtn} /></a>                
+                <Link className="d-flex justify-content-start justify-content-md-end align-items-center text-black-50" to="/agent"><FontAwesomeIcon className="backgroundIcon me-2 fs-5 text-black-50" icon={faArrowLeft}/>Volver</Link>                
               </div>              
             </div>
             <div className="row mt-5">
-              <div className="col-12 col-md-5">
+              <div className="col-12">
                 <p className='text-hyphens'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac ultricies erat. Suspendisse aliquet risus id purus blandit, ac posuere augue tempus. Suspendisse orci dolor,aliquet sit amet pellentesque</p>
-              </div>
-              <div className="col-12 col-md-7 d-flex flex-wrap">
-                <CardMain labelCardMain={labelCardMain} textOne={textOne} textTwo={textTwo}/>
-              </div>              
+              </div>            
             </div>  
             {/* Section:  Agent*/}
-            <div className="row mt-5">
-              <div className="col-12 col-md-4">
-                <h1>AGENTES ACTIVOS</h1>
+            <div className="row d-flex flex-wrap">
+              <div className="col-12 col-md-7">
+                <CreateCardAgent />
               </div>
-              <div className="col-12 col-md-4 mt-3 mt-md-0">
-                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMainDisabled labelBtn={labelBtnTwo} /></a>                
-              </div>
-              <div className="col-12 col-md-4 mt-3 mt-md-0">
-                <a className="d-flex justify-content-start justify-content-md-end" href="/"><BtnMainDisabled labelBtn={labelBtnThree} /></a>                
-              </div>                   
-            </div>
-            <div className="row d-flex flex-wrap mt-5">
-              <div className="col-12 col-md-6 col-lg-4">
-                <EditCardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
+              <div className="col-12 col-md-5">
+                <div className="col-12">
+                  <CardAgent image={image} labelCardAgent={labelCardAgent} textAgent={textAgentOne} name={userOne} password={passwordOne} email={emailOne}/>
+                </div>
               </div>
             </div>
             <div className="row d-flex flex-wrap mt-5">

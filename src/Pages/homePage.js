@@ -10,8 +10,10 @@ import CardMain from '../components/CardMain.js';
 import CardMainThree from '../components/CardMainThree.js';
 import CardMainTwo from '../components/CardMainTwo';
 import CardAgent from '../components/CardAgent';
+import Carousel from '../components/Carousel.js';
+import BtnSelect from '../components/BtnSelect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook,  faInstagram } from '@fortawesome/free-brands-svg-icons';
 import imgPhono from '../images/imagePhono.png';
 
@@ -84,6 +86,8 @@ class HomePage extends Component {
     const passwordOne = "******";
     const emailOne = "andres@teki.com";
 
+    const listCampaign = ["Campaña 1", "Campaña 2", "Campaña 3"];
+
     return (
       <div>
         <NavBarTop Show={this.Show}/>
@@ -117,11 +121,9 @@ class HomePage extends Component {
             {/* Section:  Campaign*/}
             <div className="row">
               <div className="col-8 col-md-4">
-                <select className="form-select col-10" aria-label="Default select example">
-                  <option value="1">Campaña 1</option>
-                  <option value="2">Campaña 2</option>
-                  <option value="3">Campaña 3</option>
-                </select>
+                <div className="col-10">
+                  <BtnSelect listCampaign={listCampaign}/>
+                </div>
               </div>
               <div className="col-12 col-md-8 d-flex flex-wrap justify-content-md-end">
                 <a className="d-flex justify-content-start justify-content-end pe-0 pe-sm-2 ps-md-3 mt-3 mt-md-0" href="/">
@@ -154,32 +156,7 @@ class HomePage extends Component {
             </div>
             <div className="row mt-5">              
               <div className="col-12 col-md-6 d-flex justify-content-center">     
-                <div id="carouselExampleIndicators" className="carousel slide col-8 col-md-12" data-bs-ride="carousel">
-                  <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  </div>
-                  <div className="carousel-inner">
-                    <div className="carousel-item active">
-                      <img src={imgPhono} className="d-block w-100" alt=""/>
-                    </div>
-                    <div className="carousel-item">
-                      <img src={imgPhono} className="d-block w-100" alt=""/>
-                    </div>
-                    <div className="carousel-item">
-                      <img src={imgPhono} className="d-block w-100" alt=""/>
-                    </div>
-                  </div>
-                  <button className="carousel-control-prev text-dark" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon text-dark" aria-hidden="true"><FontAwesomeIcon className="" icon={faChevronLeft} /></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button className="carousel-control-next " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span className="carousel-control-next-icon text-dark" aria-hidden="true"><FontAwesomeIcon className="" icon={faChevronRight} /></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
-                </div> 
+                <Carousel imgPhono={imgPhono}/>
               </div>
               <div className="col-12 col-md-6">
                 <a className="d-flex justify-content-start justify-content-md-end mt-3 mt-md-0" href="/">

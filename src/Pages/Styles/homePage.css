@@ -60,3 +60,8 @@
     padding-left: 0px;
   }
 }
+@media (max-width: 576px){
+  .mainContainer {
+    padding: 50px !important;
+  }
+}

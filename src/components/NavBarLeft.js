@@ -67,10 +67,10 @@ function NavBarLeft({show, Show}) {
             {show ? "" :
             <ul className="collapse dropdown-menu listDropdown bg-light" id="collapseBtnTwo">
               <li className="ps-2">
-                <a className='sidebar-link' href="/">Campañas</a>
+                <Link className="sidebar-link" to='/metrics-campaign'>Campañas</Link>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="/">Conversaciones</a>
+                <Link className="sidebar-link" to='/metrics-conversations'>Conversaciones</Link>
               </li>
               <li className="ps-2">
                 <a className='sidebar-link' href="/">Nuevos vs recurrentes</a>

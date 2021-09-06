@@ -11,7 +11,9 @@ import Profile from './Pages/account/profile';
 import EditProfile from './Pages/account/editProfile';
 import Agent from './Pages/account/agent';
 import EditAgent from './Pages/account/editAgent';
-import CreateAgent from './Pages/account/CreateAgent';
+import CreateAgent from './Pages/account/createAgent';
+import Campaign from './Pages/metrics/campaign';
+import Conversations from './Pages/metrics/ conversations';
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route exact path='/agent' component={Agent} />
         <Route exact path='/edit-agent' component={EditAgent}/>
         <Route exact path='/create-agent' component={CreateAgent}/>
+        <Route exact path='/metrics-campaign' component={Campaign}/>
+        <Route exact path='/metrics-conversations' component={Conversations}/>
       </Switch>
     </div>
   );
