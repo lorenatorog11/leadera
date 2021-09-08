@@ -1,3 +1,3 @@
-import './chartJS';
-import './easyPieChart';
-import './sparkline';
+import './chartJS/index';
+// import './easyPieChart';
+// import './sparkline';

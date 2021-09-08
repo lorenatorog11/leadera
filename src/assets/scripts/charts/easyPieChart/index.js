@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import $ from 'jquery';
 import 'easy-pie-chart/dist/jquery.easypiechart.min.js';
 
 export default (function () {

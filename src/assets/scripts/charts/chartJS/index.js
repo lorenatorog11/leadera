@@ -1,4 +1,4 @@
-import Chart from 'chart.js';
+import Chart from 'react-charts/dist/react-charts.development';
 import { COLORS } from '../../constants/colors';
 
 export default (function () {

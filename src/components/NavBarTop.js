@@ -17,7 +17,7 @@ function NavBarTop({Show}) {
         <ul className="nav-left col-6 col-lg-4 mx-0 ps-4 d-flex align-items-center">
           <li className="d-lg-none">
             <button id='sidebar-toggle' className="sidebar-toggle bg-transparent" onClick={Show}>
-              <i class="ti-menu"></i>
+              <i className="ti-menu"></i>
             </button>
           </li>
           <li>

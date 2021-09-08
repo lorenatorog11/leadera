@@ -13,7 +13,8 @@ import Agent from './Pages/account/agent';
 import EditAgent from './Pages/account/editAgent';
 import CreateAgent from './Pages/account/createAgent';
 import Campaign from './Pages/metrics/campaign';
-import Conversations from './Pages/metrics/ conversations';
+import Conversations from './Pages/metrics/conversations';
+import NewRecurring from './Pages/metrics/newRecurring';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path='/create-agent' component={CreateAgent}/>
         <Route exact path='/metrics-campaign' component={Campaign}/>
         <Route exact path='/metrics-conversations' component={Conversations}/>
+        <Route exact path='/metrics-newRecurring' component={NewRecurring}/>
       </Switch>
     </div>
   );

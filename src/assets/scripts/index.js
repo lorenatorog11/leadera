@@ -4,7 +4,7 @@
 import '../styles/index.scss';
 // import './fullcalendar';
 // import './masonry';
-// import './charts';
+import './charts';
 // import './popover';
 // import './scrollbar';
 import './search';
