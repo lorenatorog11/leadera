@@ -76,10 +76,10 @@ function NavBarLeft({show, Show}) {
                 <Link className="sidebar-link" to='/metrics-newRecurring'>Nuevos vs recurrentes</Link>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="/">Audiciencia</a>
+                <Link className="sidebar-link" to='/metrics-audience'>Audiciencia</Link>
               </li>
               <li className="ps-2">
-                <a className='sidebar-link' href="/">Geográfico</a>
+                <Link className="sidebar-link" to='/metrics-geographical'>Geográfico</Link>
               </li>
               <li className="ps-2">
                 <a className='sidebar-link' href="/">Conversaciones</a>

@@ -6,8 +6,9 @@ import '../../assets/static/fonts/icons/themify/themify.eot';
 import NavBarLeft from '../../components/NavBarLeft.js';
 import NavBarTop from '../../components/NavBarTop.js';
 import BtnSelect from '../../components/BtnSelect';
+import BtnsSelectTime from '../../components/BtnsSelectTime';
 import CardMain from '../../components/CardMain';
-import {Bar} from 'react-chartjs-2';
+import {Bar, Pie} from 'react-chartjs-2';
 
 class Conversations extends Component {
   constructor(props){  
@@ -40,10 +41,11 @@ class Conversations extends Component {
     const labelCardMainTwo = 'Contactos Recurrentes';
     const textTwo = "15";
     const listCampaign = ["15 de Junio 2021 - 30 de junio 2021", "16 de Junio 2021 - 30 de junio 2021", "17 de Junio 2021 - 30 de junio 2021"];
-    const listCampaignDepartment = ["Departamento", "Departamento", "Departamento"]
-    const listCampaignCity = ["Ciudad", "Ciudad", "Ciudad"]
-    const listCampaignSex = ["Sexo", "Sexo", "Sexo"]
-    const listCampaignAge = ["Edad", "Edad", "Edad"]
+    const listCampaignDepartment = ["Departamento", "Departamento", "Departamento"];
+    const listCampaignCity = ["Ciudad", "Ciudad", "Ciudad"];
+    const listCampaignSex = ["Sexo", "Sexo", "Sexo"];
+    const listCampaignAge = ["Edad", "Edad", "Edad"];
+    const listTime =["Día", "Mes", "Año"];
     const data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June'],
       datasets: [
@@ -72,6 +74,32 @@ class Conversations extends Component {
           }]
       }
     };
+    const dataTwo = {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [
+        {
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    };
     return (
       <div>
         <NavBarTop Show={this.Show}/>
@@ -90,13 +118,7 @@ class Conversations extends Component {
             {/* Section:  Campaign*/}      
             <div className="row mt-2">              
               <div className="col-12 d-flex flex-wrap justify-content-end"> 
-                <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                  <div className="btn-group me-2" role="group" aria-label="First group">
-                    <button type="button" className="btn bg-white text-dark btn-color border border-dark">Día</button>
-                    <button type="button" className="btn bg-white text-dark btn-color border border-dark">Semana</button>
-                    <button type="button" className="btn bg-white text-dark btn-color border border-dark">Mes</button>
-                  </div>
-                </div>     
+                <BtnsSelectTime listTime={listTime}/>    
               </div>              
             </div>
             <div className="row mt-2">              
@@ -105,38 +127,31 @@ class Conversations extends Component {
               </div>              
             </div>
             <div className="row mt-2 col-12 col-md-10 px-0">              
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
+              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-md-0">
                 <BtnSelect listCampaign={listCampaignDepartment}/>      
               </div>        
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
+              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-md-0">
                 <BtnSelect listCampaign={listCampaignCity}/>      
               </div>
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
+              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-md-0">
                 <BtnSelect listCampaign={listCampaignSex}/>      
               </div>
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
+              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-md-0">
                 <BtnSelect listCampaign={listCampaignAge}/>      
               </div>      
             </div>
             <div className="row mt-5 px-0">              
-              <div className="col-12 col-md-9 mt-2 mt-sm-0 cardMain">
+              <div className="col-12 col-md-9 mt-2 mb-4 mt-sm-0 cardMain">
                 <Bar data={data} options={options}/>
               </div> 
-              <div className="col-12 col-md-3 mt-2 mt-sm-0">
+              <div className="col-12 col-md-3 mt-2 mt-sm-0 px-0 px-sm-2">
                 <div><CardMain labelCardMain={labelCardMain} textOne={textOne}/></div>
                 <div className="mt-4"><CardMain labelCardMain={labelCardMainTwo} textOne={textTwo}/></div>
               </div> 
             </div> 
             <div className="row mt-5 px-0">              
-              <div className="col-12 col-md-9 mt-2 mt-sm-0 cardMain">
-                {/* <Pie 
-                  data={data}
-                  width={3}
-                  height={3}
-                  options={{
-                    legend:{display:false},
-                    title: {display: true,text: 'Açılan Sandık'},
-                  }}/> */}
+              <div className="col-12 col-sm-6 col-md-4 mt-2 mt-sm-0 cardMain">
+                <Pie data={dataTwo} />
               </div>
             </div>              
           </main>

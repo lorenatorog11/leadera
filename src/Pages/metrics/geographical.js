@@ -6,11 +6,10 @@ import '../../assets/static/fonts/icons/themify/themify.eot';
 import NavBarLeft from '../../components/NavBarLeft.js';
 import NavBarTop from '../../components/NavBarTop.js';
 import BtnSelect from '../../components/BtnSelect';
-import CardMain from '../../components/CardMain';
 import BtnsSelectTime from '../../components/BtnsSelectTime';
 import {Bar} from 'react-chartjs-2';
 
-class Conversations extends Component {
+class Geographical extends Component {
   constructor(props){  
     super(props);  
     this.state = {  
@@ -36,41 +35,54 @@ class Conversations extends Component {
     this.setState ({show: false})};
 
   render (){
-    const labelCardMain = 'Leads';
-    const textOne = "250";
     const listCampaign = ["15 de Junio 2021 - 30 de junio 2021", "16 de Junio 2021 - 30 de junio 2021", "17 de Junio 2021 - 30 de junio 2021"];
-    const listCampaignDepartment = ["Departamento", "Departamento", "Departamento"]
+    const listCampaignDepartment = ["Departamento", "Departamento", "Departamento"];
     const listCampaignCity = ["Ciudad", "Ciudad", "Ciudad"];
-    const listCampaignSex = ["Sexo", "Sexo", "Sexo"];
-    const listCampaignAge = ["Edad", "Edad", "Edad"];
     const listTime =["Día", "Mes", "Año"];
     const data = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+      labels: ['Bogotá', 'Medellín', 'Barranquilla', 'Cali', 'Armenia', 'Pereira', 'Envigado', 'Manizales', 'Cartagena', 'Pasto' ],
       datasets: [
         {
-          label: 'Sales',
-          data: [21, 35, 75, 51, 41, 47],
-          fill: false, // for Line chart
-          backgroundColor: '#FB8833',
-          borderColor: '#FB8833' // for Line chart
+          label: ['25%'],
+          data: [12, 19, 3, 5, 2, 3, 12, 19, 3, 5],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+          ],
+          borderWidth: 1,
         },
-        {
-          label: 'Leads',
-          data: [41, 79, 57, 47, 63, 71],
-          fill: false, // for Line chart
-          backgroundColor: '#17A8F5',
-          borderColor: '#17A8F5' // for Line chart
-        }
-      ]
+      ],
     };
+    
     const options = {
-      scales: {
-          yAxes: [{
-              ticks: {
-                  beginAtZero: true
-              }
-          }]
-      }
+      indexAxis: 'y',
+      elements: {
+        bar: {
+          borderWidth: 2,
+        },
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'right',
+        },
+        title: {
+          display: true,
+          text: '',
+        },
+      },
     };
     return (
       <div>
@@ -81,7 +93,7 @@ class Conversations extends Component {
             {/* Section: Plan */}
             <div className="row">
               <div className="col-12 col-md-8">
-                <h1>CONVERSIONES</h1>
+                <h1>GEOGRÁFICO</h1>
               </div>
               <div className="col-12 col-md-4">
                 <BtnSelect listCampaign={listCampaign}/>                 
@@ -89,7 +101,7 @@ class Conversations extends Component {
             </div>
             {/* Section:  Campaign*/}      
             <div className="row mt-2">              
-              <div className="col-12 d-flex flex-wrap justify-content-end">
+              <div className="col-12 d-flex flex-wrap justify-content-end"> 
                 <BtnsSelectTime listTime={listTime}/>    
               </div>              
             </div>
@@ -99,27 +111,21 @@ class Conversations extends Component {
               </div>              
             </div>
             <div className="row mt-2 col-12 col-md-10 px-0">              
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
+              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-md-0">
                 <BtnSelect listCampaign={listCampaignDepartment}/>      
               </div>        
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
+              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-md-0">
                 <BtnSelect listCampaign={listCampaignCity}/>      
-              </div>
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
-                <BtnSelect listCampaign={listCampaignSex}/>      
-              </div>
-              <div className="col-4 col-sm-4 col-md-3 mt-2 mt-sm-0">
-                <BtnSelect listCampaign={listCampaignAge}/>      
-              </div>      
+              </div>    
             </div>
-            <div className="row mt-5 px-0">              
-              <div className="col-12 col-md-9 mt-2 mt-sm-0 cardMain">
+            <div className="row mt-5 px-0 d-flex justify-content-center justify-content-md-between">              
+              <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 cardMain">
                 <Bar data={data} options={options}/>
               </div> 
-              <div className="col-12 col-md-3 mt-2 mt-sm-0">
-                <CardMain labelCardMain={labelCardMain} textOne={textOne}/>
+              <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 cardMain">
+                <Bar data={data} options={options}/>
               </div> 
-            </div>               
+            </div>             
           </main>
         </div>
       </div>
@@ -127,7 +133,7 @@ class Conversations extends Component {
   }
 };
 
-export default Conversations;
+export default Geographical;
 
 
 
