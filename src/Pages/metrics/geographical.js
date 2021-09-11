@@ -8,6 +8,7 @@ import NavBarTop from '../../components/NavBarTop.js';
 import BtnSelect from '../../components/BtnSelect';
 import BtnsSelectTime from '../../components/BtnsSelectTime';
 import {Bar} from 'react-chartjs-2';
+import CardGeographical from '../../components/CardGeographical';
 
 class Geographical extends Component {
   constructor(props){  
@@ -38,7 +39,11 @@ class Geographical extends Component {
     const listCampaign = ["15 de Junio 2021 - 30 de junio 2021", "16 de Junio 2021 - 30 de junio 2021", "17 de Junio 2021 - 30 de junio 2021"];
     const listCampaignDepartment = ["Departamento", "Departamento", "Departamento"];
     const listCampaignCity = ["Ciudad", "Ciudad", "Ciudad"];
-    const listTime =["Día", "Mes", "Año"];
+    const listTime =["Día", "Mes", "Año"];    
+    const labelCardGeographical = {
+      citys: ['Bogotá', 'Medellín', 'Barranquilla', 'Cali', 'Armenia', 'Pereira', 'Envigado', 'Manizales', 'Cartagena', 'Pasto' ],
+      amount: [25, 20, 18, 16, 13, 25, 20, 18, 16, 2]
+    };
     const data = {
       labels: ['Bogotá', 'Medellín', 'Barranquilla', 'Cali', 'Armenia', 'Pereira', 'Envigado', 'Manizales', 'Cartagena', 'Pasto' ],
       datasets: [
@@ -120,10 +125,16 @@ class Geographical extends Component {
             </div>
             <div className="row mt-5 px-0 d-flex justify-content-center justify-content-md-between">              
               <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 cardMain">
-                <Bar data={data} options={options}/>
+                <Bar data={data} options={options} width={100} height={50}/>
+              </div>               
+              <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 d-flex flex-wrap cardMain">
+                <CardGeographical labelCardGeographical={labelCardGeographical}/>
               </div> 
               <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 cardMain">
                 <Bar data={data} options={options}/>
+              </div> 
+              <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 d-flex flex-wrap cardMain">
+                <CardGeographical labelCardGeographical={labelCardGeographical}/>
               </div> 
             </div>             
           </main>
