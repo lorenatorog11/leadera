@@ -67,6 +67,8 @@ class Geographical extends Component {
             'rgba(255, 159, 64, 1)',
           ],
           borderWidth: 1,
+          categoryPercentage: 1.0,
+          barPercentage: 0.8,
         },
       ],
     };
@@ -75,7 +77,7 @@ class Geographical extends Component {
       indexAxis: 'y',
       elements: {
         bar: {
-          borderWidth: 2,
+          borderWidth: 1,
         },
       },
       responsive: true,
@@ -87,6 +89,9 @@ class Geographical extends Component {
           display: true,
           text: '',
         },
+      },
+      legend: {
+        display: true,
       },
     };
     return (
@@ -125,13 +130,13 @@ class Geographical extends Component {
             </div>
             <div className="row mt-5 px-0 d-flex justify-content-center justify-content-md-between">              
               <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 cardMain">
-                <Bar data={data} options={options} width={100} height={50}/>
+                <Bar data={data} options={options} className="h-100"/>
               </div>               
               <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 d-flex flex-wrap cardMain">
                 <CardGeographical labelCardGeographical={labelCardGeographical}/>
               </div> 
               <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 cardMain">
-                <Bar data={data} options={options}/>
+                <Bar data={data} options={options} className="h-100"/>
               </div> 
               <div className="col-12 col-md-5 mt-2 mb-4 mt-sm-0 px-2 d-flex flex-wrap cardMain">
                 <CardGeographical labelCardGeographical={labelCardGeographical}/>

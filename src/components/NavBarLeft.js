@@ -87,12 +87,12 @@ function NavBarLeft({show, Show}) {
             </ul> }
           </li>
           <li className="nav-item mT-10">
-            <a className="sidebar-link" href="/">
+            <Link className="sidebar-link" to='/leads'>
               <span className="icon-holder">
                 <FontAwesomeIcon className="backgroundIcon" icon={faUser} />
               </span>
               <span className="title">Leads</span>
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="navArrowShow mT-10 border-top border-dark">

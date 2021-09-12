@@ -17,6 +17,7 @@ import Conversations from './Pages/metrics/conversations';
 import NewRecurring from './Pages/metrics/newRecurring';
 import Audience from './Pages/metrics/audience';
 import Geographical from './Pages/metrics/geographical';
+import Leads from './Pages/leads';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route exact path='/metrics-newRecurring' component={NewRecurring}/>
         <Route exact path='/metrics-audience' component={Audience}/>
         <Route exact path='/metrics-geographical' component={Geographical}/>
+        <Route exact path='/leads' component={Leads}/>
       </Switch>
     </div>
   );
